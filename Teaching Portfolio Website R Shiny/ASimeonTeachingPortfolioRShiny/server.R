@@ -7,7 +7,17 @@
 #    http://shiny.rstudio.com/
 #
 
-library(shiny)
+library("shiny")
+library("shinythemes")
+library("shinyWidgets")
+library("shinyjs")
+library("shinydashboard")
+library("markdown")
+library("shinyEffects")
+library("htmltools")
+library("ggthemes")
+library("bslib")
+library("rsconnect")
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {

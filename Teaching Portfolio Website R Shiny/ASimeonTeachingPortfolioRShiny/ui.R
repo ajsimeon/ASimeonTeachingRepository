@@ -21,23 +21,35 @@ library("rsconnect")
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
+    
+    # Using Shinyjs
+    useShinyjs(),
+    
+    # Theme
+    theme = shinytheme("superhero"),
+    
+    # Background
+    tags$body(
+      style = '
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      background-image: url("IMG_0263.JPG");
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top center;
+      background-blend-mode: screen;
+      background-color: DarkGray
+      '
+    ),
+    
+    setShadow(id = "inTabset"),
 
-    # Application title
-    titlePanel("Old Faithful Geyser Data"),
-
-    # Sidebar with a slider input for number of bins
-    sidebarLayout(
-        sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
-        ),
-
-        # Show a plot of the generated distribution
-        mainPanel(
-            plotOutput("distPlot")
-        )
+    # Navigation Bar: Top of page
+    navbarMenu(
+      title = "Allan M. Simeon Jr's Teaching Portfolio",
+      id = "inTabset",
+      position = "fixed-top"
     )
 ))
